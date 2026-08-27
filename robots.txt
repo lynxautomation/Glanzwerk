@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dasglanzwerk.netlify.app/sitemap.xml
