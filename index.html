@@ -224,6 +224,11 @@
   #chat-input:focus{outline:none;border-color:var(--gold-2);}
   #chat-send{background:linear-gradient(135deg,var(--gold-1),var(--gold-2));border:none;border-radius:10px;width:42px;flex-shrink:0;color:#241a05;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;}
   #chat-send svg{width:18px;height:18px;}
+  #chat-privacy-note{padding:0 14px 12px;text-align:center;flex-shrink:0;}
+  #chat-privacy-note a{font-size:.68rem;color:var(--text-muted);text-decoration:underline;}
+  #chat-privacy-note a:hover{color:var(--gold-1);}
+  .chat-credit{font-size:.68rem;color:var(--text-muted);}
+  .chat-credit a{text-decoration:underline;}
   @media(max-width:480px){#chat-panel{right:10px;bottom:86px;width:calc(100vw - 20px);height:min(600px,72vh);}#chat-toggle{right:16px;}}
 
   /* BACK TO TOP */
@@ -649,6 +654,10 @@
     <input id="chat-input" type="text" placeholder="Deine Nachricht...">
     <button id="chat-send" aria-label="Senden"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
   </div>
+  <div id="chat-privacy-note">
+    <a href="datenschutz.html#chatbot" target="_blank">Datenschutzhinweise zum Chat</a>
+    <span class="chat-credit">· Powered by <a href="https://lynx-automation.de" target="_blank" rel="noopener">Lynx Automation</a></span>
+  </div>
 </div>
 
 <script>
@@ -722,7 +731,6 @@
     chatPanel.classList.add('open');
     if(!greeted){
       greeted = true;
-      addMsg('Deine Nachrichten werden zur Beantwortung an Anthropic (USA) übermittelt. Details dazu in unserer Datenschutzerklärung. Mit dem Senden einer Nachricht bist du damit einverstanden.', 'disclosure');
       addMsg('Hi! Ich bin der Glanzwerk-Assistent. Frag mich gern nach Paketen, Preisen oder einem Termin. 🚗✨', 'bot');
       renderQuickReplies();
     }
