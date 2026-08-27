@@ -170,27 +170,61 @@
 
   /* CHAT WIDGET */
   #chat-toggle{
-    position:fixed;bottom:22px;right:22px;z-index:100;width:60px;height:60px;border-radius:50%;
+    position:fixed;bottom:22px;right:22px;z-index:100;width:62px;height:62px;border-radius:50%;
     background:linear-gradient(160deg,var(--gold-1),var(--gold-2));border:none;cursor:pointer;
     box-shadow:0 6px 20px rgba(200,149,46,0.4);display:flex;align-items:center;justify-content:center;
+    transition:transform .2s;
   }
-  #chat-toggle svg{width:26px;height:26px;stroke:#241a05;}
+  #chat-toggle:hover{transform:scale(1.06);}
+  #chat-toggle svg{width:27px;height:27px;stroke:#241a05;}
   #chat-panel{
-    position:fixed;bottom:94px;right:22px;z-index:100;width:min(340px,90vw);max-height:70vh;
-    background:var(--bg-card);border:1px solid var(--border);border-radius:16px;
-    display:none;flex-direction:column;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,0.5);
+    position:fixed;bottom:96px;right:22px;z-index:100;width:min(420px,94vw);height:min(620px,76vh);
+    background:var(--bg-card);border:1px solid var(--border);border-radius:20px;
+    display:none;flex-direction:column;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.55);
   }
   #chat-panel.open{display:flex;}
-  #chat-header{padding:14px 16px;background:linear-gradient(135deg,var(--gold-1),var(--gold-2));color:#241a05;font-weight:700;font-size:.9rem;}
-  #chat-messages{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;font-size:.85rem;max-height:340px;}
-  .msg{padding:9px 12px;border-radius:10px;max-width:85%;line-height:1.5;}
-  .msg.bot{background:var(--bg-card-2);color:var(--text);align-self:flex-start;}
-  .msg.user{background:linear-gradient(135deg,var(--gold-1),var(--gold-2));color:#241a05;align-self:flex-end;}
-  .msg.disclosure{font-size:.72rem;color:var(--text-muted);background:transparent;border:1px dashed var(--border);}
-  #chat-input-row{display:flex;border-top:1px solid var(--border);padding:10px;gap:8px;}
-  #chat-input{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:9px 10px;font-size:.85rem;font-family:'Inter',sans-serif;}
+  #chat-header{
+    padding:16px 18px;background:linear-gradient(135deg,var(--gold-1),var(--gold-2));
+    color:#241a05;display:flex;align-items:center;gap:12px;flex-shrink:0;
+  }
+  #chat-header .avatar{
+    width:38px;height:38px;border-radius:50%;background:rgba(36,26,5,0.15);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;
+  }
+  #chat-header .title{font-weight:700;font-size:.95rem;line-height:1.3;}
+  #chat-header .subtitle{font-size:.72rem;font-weight:500;opacity:.8;display:flex;align-items:center;gap:5px;}
+  #chat-header .dot{width:7px;height:7px;border-radius:50%;background:#2e7d52;display:inline-block;}
+  #chat-close{margin-left:auto;background:none;border:none;cursor:pointer;color:#241a05;opacity:.7;padding:4px;}
+  #chat-close svg{width:18px;height:18px;stroke:currentColor;}
+  #chat-messages{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:12px;font-size:.9rem;}
+  .msg{padding:11px 14px;border-radius:14px;max-width:88%;line-height:1.55;}
+  .msg.bot{background:var(--bg-card-2);color:var(--text);align-self:flex-start;border-bottom-left-radius:4px;}
+  .msg.user{background:linear-gradient(135deg,var(--gold-1),var(--gold-2));color:#241a05;align-self:flex-end;border-bottom-right-radius:4px;font-weight:500;}
+  .msg.disclosure{font-size:.74rem;color:var(--text-muted);background:transparent;border:1px dashed var(--border);max-width:100%;}
+  .msg p{margin:0 0 8px;}
+  .msg p:last-child{margin-bottom:0;}
+  .msg ul{margin:4px 0 8px;padding-left:20px;}
+  .msg li{margin:2px 0;}
+  .msg strong{color:var(--gold-1);}
+  .msg.user strong{color:#241a05;}
+  .msg.typing{display:flex;gap:4px;align-items:center;padding:14px;}
+  .msg.typing span{width:6px;height:6px;border-radius:50%;background:var(--text-muted);animation:typingDot 1.2s infinite ease-in-out;}
+  .msg.typing span:nth-child(2){animation-delay:.2s;}
+  .msg.typing span:nth-child(3){animation-delay:.4s;}
+  @keyframes typingDot{0%,60%,100%{opacity:.3;transform:translateY(0);}30%{opacity:1;transform:translateY(-3px);}}
+  #chat-quick{display:flex;flex-wrap:wrap;gap:8px;padding:0 18px 14px;flex-shrink:0;}
+  .chat-chip{
+    background:var(--bg-card-2);border:1px solid var(--border);color:var(--text);
+    font-size:.78rem;padding:8px 13px;border-radius:999px;cursor:pointer;
+    font-family:'Inter',sans-serif;transition:border-color .2s, color .2s;
+  }
+  .chat-chip:hover{border-color:var(--gold-2);color:var(--gold-1);}
+  #chat-input-row{display:flex;border-top:1px solid var(--border);padding:12px;gap:8px;flex-shrink:0;}
+  #chat-input{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:10px;color:var(--text);padding:11px 12px;font-size:.9rem;font-family:'Inter',sans-serif;}
   #chat-input:focus{outline:none;border-color:var(--gold-2);}
-  #chat-send{background:linear-gradient(135deg,var(--gold-1),var(--gold-2));border:none;border-radius:8px;padding:0 14px;color:#241a05;font-weight:700;cursor:pointer;}
+  #chat-send{background:linear-gradient(135deg,var(--gold-1),var(--gold-2));border:none;border-radius:10px;width:42px;flex-shrink:0;color:#241a05;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+  #chat-send svg{width:18px;height:18px;}
+  @media(max-width:480px){#chat-panel{right:10px;bottom:86px;width:calc(100vw - 20px);height:min(600px,72vh);}#chat-toggle{right:16px;}}
 
   /* BACK TO TOP */
   #to-top{
@@ -599,45 +633,113 @@
   <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
 </button>
 <div id="chat-panel">
-  <div id="chat-header">Das Glanzwerk – Chat</div>
+  <div id="chat-header">
+    <div class="avatar">✨</div>
+    <div>
+      <div class="title">Glanzwerk-Assistent</div>
+      <div class="subtitle"><span class="dot"></span> Online</div>
+    </div>
+    <button id="chat-close" aria-label="Chat schließen">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
   <div id="chat-messages"></div>
+  <div id="chat-quick"></div>
   <div id="chat-input-row">
     <input id="chat-input" type="text" placeholder="Deine Nachricht...">
-    <button id="chat-send">➤</button>
+    <button id="chat-send" aria-label="Senden"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
   </div>
 </div>
 
 <script>
   // CHAT WIDGET
   const chatToggle = document.getElementById('chat-toggle');
+  const chatClose = document.getElementById('chat-close');
   const chatPanel = document.getElementById('chat-panel');
   const messages = document.getElementById('chat-messages');
+  const quickWrap = document.getElementById('chat-quick');
   const input = document.getElementById('chat-input');
   const sendBtn = document.getElementById('chat-send');
   let greeted = false;
 
+  const QUICK_QUESTIONS = [
+    'Was kostet eine Innenreinigung?',
+    'Wie vereinbare ich einen Termin?',
+    'Wo seid ihr erreichbar?',
+    'Was ist im Premium-Paket enthalten?'
+  ];
+
+  // Escaped HTML + einfache Formatierung (Zeilenumbrüche, **fett**, "- " Listen)
+  function formatMessage(text){
+    const escape = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const paragraphs = text.split(/\n\s*\n/);
+    return paragraphs.map(p=>{
+      const lines = p.split('\n').map(l=>l.trim()).filter(Boolean);
+      const isList = lines.length > 1 && lines.every(l=>/^[-•]\s+/.test(l));
+      if(isList){
+        const items = lines.map(l=>`<li>${escape(l.replace(/^[-•]\s+/,'')).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')}</li>`).join('');
+        return `<ul>${items}</ul>`;
+      }
+      const html = escape(lines.join('<br>')).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
+      return `<p>${html}</p>`;
+    }).join('');
+  }
+
   function addMsg(text, cls){
     const d = document.createElement('div');
     d.className = 'msg ' + cls;
-    d.textContent = text;
+    if(cls === 'bot'){
+      d.innerHTML = formatMessage(text);
+    } else {
+      d.textContent = text;
+    }
     messages.appendChild(d);
     messages.scrollTop = messages.scrollHeight;
+    return d;
   }
 
-  chatToggle.addEventListener('click', ()=>{
-    chatPanel.classList.toggle('open');
+  function showTyping(){
+    const d = document.createElement('div');
+    d.className = 'msg bot typing';
+    d.innerHTML = '<span></span><span></span><span></span>';
+    messages.appendChild(d);
+    messages.scrollTop = messages.scrollHeight;
+    return d;
+  }
+
+  function renderQuickReplies(){
+    quickWrap.innerHTML = '';
+    QUICK_QUESTIONS.forEach(q=>{
+      const chip = document.createElement('button');
+      chip.className = 'chat-chip';
+      chip.textContent = q;
+      chip.addEventListener('click', ()=>{ quickWrap.innerHTML=''; sendMessage(q); });
+      quickWrap.appendChild(chip);
+    });
+  }
+
+  function openChat(){
+    chatPanel.classList.add('open');
     if(!greeted){
       greeted = true;
       addMsg('Deine Nachrichten werden zur Beantwortung an Anthropic (USA) übermittelt. Details dazu in unserer Datenschutzerklärung. Mit dem Senden einer Nachricht bist du damit einverstanden.', 'disclosure');
       addMsg('Hi! Ich bin der Glanzwerk-Assistent. Frag mich gern nach Paketen, Preisen oder einem Termin. 🚗✨', 'bot');
+      renderQuickReplies();
     }
-  });
+  }
 
-  async function sendMessage(){
-    const text = input.value.trim();
+  chatToggle.addEventListener('click', ()=>{
+    if(chatPanel.classList.contains('open')){ chatPanel.classList.remove('open'); }
+    else { openChat(); }
+  });
+  chatClose.addEventListener('click', ()=> chatPanel.classList.remove('open'));
+
+  async function sendMessage(prefill){
+    const text = (typeof prefill === 'string' ? prefill : input.value).trim();
     if(!text) return;
     addMsg(text, 'user');
     input.value = '';
+    const typingEl = showTyping();
     try{
       // Diese Funktion muss serverseitig (z. B. als Netlify Function) angebunden werden,
       // die die Anfrage sicher an die Anthropic API weiterleitet (kein API-Key im Frontend!).
@@ -646,15 +748,17 @@
         headers:{'Content-Type':'application/json'},
         body: JSON.stringify({ message: text })
       });
+      typingEl.remove();
       if(!res.ok) throw new Error('no backend yet');
       const data = await res.json();
       addMsg(data.reply, 'bot');
     }catch(err){
+      typingEl.remove();
       addMsg('Der Chat ist gerade noch im Aufbau – ruf uns gern direkt an: 0160 2319897 📞', 'bot');
     }
   }
 
-  sendBtn.addEventListener('click', sendMessage);
+  sendBtn.addEventListener('click', ()=>sendMessage());
   input.addEventListener('keydown', e=>{ if(e.key==='Enter') sendMessage(); });
 
   // BACK TO TOP
