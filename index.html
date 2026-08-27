@@ -206,6 +206,8 @@
   .msg ul{margin:4px 0 8px;padding-left:20px;}
   .msg li{margin:2px 0;}
   .msg strong{color:var(--gold-1);}
+  .msg a{color:var(--gold-1);text-decoration:underline;}
+  .msg.user a{color:#241a05;}
   .msg.user strong{color:#241a05;}
   .msg.typing{display:flex;gap:4px;align-items:center;padding:14px;}
   .msg.typing span{width:6px;height:6px;border-radius:50%;background:var(--text-muted);animation:typingDot 1.2s infinite ease-in-out;}
@@ -681,15 +683,19 @@
   // Escaped HTML + einfache Formatierung (Zeilenumbrüche, **fett**, "- " Listen)
   function formatMessage(text){
     const escape = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const linkify = s => s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (m, label, url) => {
+      const safeUrl = escape(url);
+      return `<a href="${safeUrl}" target="_blank" rel="noopener">${label}</a>`;
+    });
     const paragraphs = text.split(/\n\s*\n/);
     return paragraphs.map(p=>{
       const lines = p.split('\n').map(l=>l.trim()).filter(Boolean);
       const isList = lines.length > 1 && lines.every(l=>/^[-•]\s+/.test(l));
       if(isList){
-        const items = lines.map(l=>`<li>${escape(l.replace(/^[-•]\s+/,'')).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')}</li>`).join('');
+        const items = lines.map(l=>`<li>${linkify(escape(l.replace(/^[-•]\s+/,'')).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>'))}</li>`).join('');
         return `<ul>${items}</ul>`;
       }
-      const html = escape(lines.join('<br>')).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
+      const html = linkify(escape(lines.join('<br>')).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>'));
       return `<p>${html}</p>`;
     }).join('');
   }
@@ -697,7 +703,7 @@
   function addMsg(text, cls){
     const d = document.createElement('div');
     d.className = 'msg ' + cls;
-    if(cls === 'bot'){
+    if(cls === 'bot' || cls === 'disclosure'){
       d.innerHTML = formatMessage(text);
     } else {
       d.textContent = text;
@@ -731,6 +737,7 @@
     chatPanel.classList.add('open');
     if(!greeted){
       greeted = true;
+      addMsg('Ich bin ein KI-gestützter Chatbot und beantworte Fragen zu diesem Unternehmen. Deine Eingaben können technisch verarbeitet werden. Bitte gib keine sensiblen personenbezogenen Daten ein. Weitere Informationen findest du in der [Datenschutzerklärung](datenschutz.html#chatbot).', 'disclosure');
       addMsg('Hi! Ich bin der Glanzwerk-Assistent. Frag mich gern nach Paketen, Preisen oder einem Termin. 🚗✨', 'bot');
       renderQuickReplies();
     }
