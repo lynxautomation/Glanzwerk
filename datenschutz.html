@@ -40,9 +40,19 @@
   .note{background:var(--bg-card);border:1px dashed var(--accent-dim);border-radius:8px;padding:16px 18px;margin-top:10px;font-size:.85rem;color:var(--text-muted);}
   .note strong{color:var(--accent);}
   footer{border-top:1px solid var(--border);padding:24px 6vw;font-size:.8rem;color:var(--text-muted);text-align:center;}
+
+  #to-top{
+    position:fixed;bottom:22px;left:22px;z-index:100;width:48px;height:48px;border-radius:50%;
+    background:var(--bg-card);border:1px solid var(--border);cursor:pointer;
+    display:flex;align-items:center;justify-content:center;text-decoration:none;
+    opacity:0;pointer-events:none;transition:opacity .25s, border-color .2s;
+  }
+  #to-top.visible{opacity:1;pointer-events:auto;}
+  #to-top:hover{border-color:var(--accent-dim);}
+  #to-top svg{width:20px;height:20px;stroke:var(--accent);}
 </style>
 </head>
-<body>
+<body id="top">
 
 <header>
   <a href="index.html" class="brand"><img src="assets/logo-icon.webp" alt="Das Glanzwerk" loading="eager" style="height:36px;width:auto;display:block;"> <span>GLANZWERK</span></a>
@@ -226,5 +236,15 @@
   © 2026 Das Glanzwerk – Hövelhof &amp; Umgebung
 </footer>
 
+
+<a href="#top" id="to-top" aria-label="Nach oben">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</a>
+<script>
+  const toTop = document.getElementById('to-top');
+  window.addEventListener('scroll', ()=>{
+    toTop.classList.toggle('visible', window.scrollY > 300);
+  });
+</script>
 </body>
 </html>
