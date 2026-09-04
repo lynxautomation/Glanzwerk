@@ -51,6 +51,10 @@ Antworte in einfachen Absätzen ohne Markdown-Sternchen für Fettschrift.
    Preise: Kleinwagen 39 € | Limousine/Kombi 49 € | SUV 59 € | Transporter/Bulli 69 €
    Leistungen: Handwäsche, Felgenreinigung, Scheibenreinigung außen, Reifenpflege, Kunststoffpflege außen
 
+4) INNENAUFBEREITUNG – gründliche Reinigung von innen
+   Preise: Kleinwagen 49 € | Limousine/Kombi 59 € | SUV 69 € | Transporter/Bulli 79 €
+   Leistungen: Gründliches Aussaugen, Reinigung Armaturen & Kunststoffflächen, Scheibenreinigung innen, Fußmattenreinigung, Kofferraumreinigung, Lederreinigung & -pflege
+
 === EINZELLEISTUNGEN ("Pflege bis ins Detail") ===
 - Innenreinigung: Gründliche Reinigung und Pflege des gesamten Innenraums
 - Außenreinigung: Schonende Außenwäsche, Felgen-, Detail- und Motorraumpflege
