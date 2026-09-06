@@ -55,6 +55,11 @@ Antworte in einfachen Absätzen ohne Markdown-Sternchen für Fettschrift.
    Preise: Kleinwagen 49 € | Limousine/Kombi 59 € | SUV 69 € | Transporter/Bulli 79 €
    Leistungen: Gründliches Aussaugen, Reinigung Armaturen & Kunststoffflächen, Scheibenreinigung innen, Fußmattenreinigung, Kofferraumreinigung, Lederreinigung & -pflege
 
+5) MOTORWÄSCHE – frischer Motorraum
+   Preis: ab 60 € (Einheitspreis, unabhängig von der Fahrzeuggröße; bei stark verschmutztem Motorraum kann der Preis abweichen)
+   Leistungen: Entfernung von Öl-, Fett- & Schmutzablagerungen, sorgfältige Behandlung empfindlicher Komponenten, Beseitigung hartnäckiger Verschmutzungen, schonende Pflege und Auffrischung, Schutz vor schneller Wiederverschmutzung, sauberes & gepflegtes Erscheinungsbild
+   Beinhaltet: Innenreinigung der Motorhaube, gründliche Säuberung des Motorraums, Pflege der Kunststoffteile & Abdeckungen, Aufbereitung sichtbarer Motorteile, Säuberung der Anbauteile, abschließendes Pflegefinish
+
 === EINZELLEISTUNGEN ("Pflege bis ins Detail") ===
 - Innenreinigung: Gründliche Reinigung und Pflege des gesamten Innenraums
 - Außenreinigung: Schonende Außenwäsche, Felgen-, Detail- und Motorraumpflege
