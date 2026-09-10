@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dasglanzwerk.netlify.app/sitemap.xml
+Sitemap: https://dasglanzwerk.studio/sitemap.xml
