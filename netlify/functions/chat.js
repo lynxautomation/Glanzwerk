@@ -38,21 +38,21 @@ Antworte in einfachen Absätzen ohne Markdown-Sternchen für Fettschrift.
 
 1) PREMIUM-PAKET – "Das Rundum-Sorglos-Paket"
    Außenaufbereitung, Maschinenpolitur & Lackversiegelung für brillanten Glanz und langanhaltenden Schutz.
-   Preise: Kleinwagen 139 € | Limousine/Kombi 159 € | SUV 179 € | Transporter/Bulli 199 €
+   Preise: Kleinwagen 170 € | Limousine/Kombi 190 € | SUV 210 € | Transporter/Bulli 230 €
    Leistungen: Gründliche Fahrzeugwäsche, Lackreinigung, Maschinenpolitur, hochwertige Wachs-/Lackversiegelung
    Beinhaltet zusätzlich: Handwäsche, Felgenreinigung, Scheibenreinigung außen, Reifenpflege, Kunststoffpflege außen
 
 2) KOMPLETTPAKET – Innen & Außen zum Vorteilspreis
-   Preise: Kleinwagen 79 € | Limousine/Kombi 89 € | SUV 109 € | Transporter/Bulli 129 €
+   Preise: Kleinwagen 80 € | Limousine/Kombi 90 € | SUV 110 € | Transporter/Bulli 130 €
    Außen: Handwäsche, Felgenreinigung, Scheibenreinigung außen, Reifenpflege, Kunststoffpflege außen
    Innen: Gründliches Aussaugen, Reinigung Armaturen & Kunststoffflächen, Scheibenreinigung innen, Fußmattenreinigung, Kofferraumreinigung, Lederreinigung & -pflege
 
 3) AUSSENAUFBEREITUNG – der schnelle Einstieg
-   Preise: Kleinwagen 39 € | Limousine/Kombi 49 € | SUV 59 € | Transporter/Bulli 69 €
+   Preise: Kleinwagen 40 € | Limousine/Kombi 50 € | SUV 60 € | Transporter/Bulli 70 €
    Leistungen: Handwäsche, Felgenreinigung, Scheibenreinigung außen, Reifenpflege, Kunststoffpflege außen
 
 4) INNENAUFBEREITUNG – gründliche Reinigung von innen
-   Preise: Kleinwagen 49 € | Limousine/Kombi 59 € | SUV 69 € | Transporter/Bulli 79 €
+   Preise: Kleinwagen 50 € | Limousine/Kombi 60 € | SUV 70 € | Transporter/Bulli 80 €
    Leistungen: Gründliches Aussaugen, Reinigung Armaturen & Kunststoffflächen, Scheibenreinigung innen, Fußmattenreinigung, Kofferraumreinigung, Lederreinigung & -pflege
 
 5) MOTORWÄSCHE – frischer Motorraum
